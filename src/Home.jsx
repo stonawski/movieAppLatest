@@ -22,6 +22,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const apiKey = "b4c8656d224730057cefeb55c48ee29b";
+const testJSON = '{"movies": ["Spiderman", "Superman"]}';
+
+const parse = JSON.parse(testJSON);
+console.log(parse);
 
 // const movie = {
 //   "adult": false,
@@ -112,7 +116,6 @@ export const Home = () => {
         const trendingDay = data.results.sort((a, b) => {
           return b.popularity - a.popularity;
         });
-
         setTrendingMoviesDay(trendingDay);
         setTrendingMovies(trendingDay);
       } else {
@@ -270,7 +273,7 @@ export const Home = () => {
           color: "#fff",
         }}
       >
-        Day
+        Today
       </span>
     </div>
   );
@@ -334,15 +337,18 @@ export const Home = () => {
           </div>
         </div>
         <div className="gridTrendingSection">
-          <div className="trendSwitchSection">
-            <Switch
-              onChange={handleChangeOfTimeZone}
-              checked={trendingTimeZone}
-              uncheckedIcon={<CustomUncheckedIcon />}
-              checkedIcon={<CustomCheckedIcon />}
-              width={80}
-              className="trendSwitch"
-            />
+          <div className="trendingHeader">
+            <h2>Trending</h2>
+            <div className="trendSwitchSection">
+              <Switch
+                onChange={handleChangeOfTimeZone}
+                checked={trendingTimeZone}
+                uncheckedIcon={<CustomUncheckedIcon />}
+                checkedIcon={<CustomCheckedIcon />}
+                width={80}
+                className="trendSwitch"
+              />
+            </div>
           </div>
           <div className="trendingSection">
             <button className="scrollButton leftButton" onClick={scrollLeft}>
@@ -361,6 +367,7 @@ export const Home = () => {
                     genres={genres}
                     handleClick={handleMovieItemClick}
                     usage={"trend"}
+                    user={user}
                   />
                 ))}
               </div>
@@ -412,6 +419,9 @@ export const Home = () => {
         ) : null}
         <div className="bgLeftPeopleSection"></div>
         <div className="gridPopularPeople">
+          <div className="popularPeopleHeader">
+            <h2>Popular People</h2>
+          </div>
           <PopularPeople popularPerson={popularPerson} />
         </div>
         <div className="bgRightPeopleSection"></div>

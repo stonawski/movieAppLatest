@@ -1,7 +1,9 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 // import MovieItem from "../MovieItem/MovieItem";
 
-const MovieItem = ({ movie, genres, handleClick, usage }) => {
+const MovieItem = ({ movie, genres, handleClick, usage, user }) => {
   let imgSrc = "";
   if (movie.poster_path) {
     imgSrc = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
@@ -32,6 +34,11 @@ const MovieItem = ({ movie, genres, handleClick, usage }) => {
         <span className="type">{movieGenres}</span> */}
       </div>
       <img src={imgSrc} alt={movie.original_title} />
+      {user ? (
+        <div className="likeMovie">
+          <FontAwesomeIcon icon={faHeart} />
+        </div>
+      ) : null}
       <div className="title">{movie.original_title}</div>
     </div>
   );

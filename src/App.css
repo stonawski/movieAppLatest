@@ -108,6 +108,14 @@ body {
   /* border: 1px solid #164863; */
 }
 
+.trendingHeader {
+  color: #fff;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
 .trendingSection {
   display: flex;
   width: 100%;
@@ -258,7 +266,7 @@ body {
 }
 
 .trendSwitchSection {
-  width: 100%;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -314,54 +322,12 @@ body {
   /* margin-top: 100px; */
 }
 
-.flexInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  color: #fff;
-}
-
-.flexInfoClose {
-  margin-top: 35px;
-  padding: 0 12px 0 12px;
-  font-size: 2em;
-  align-self: flex-start;
-}
-
-.flexInfoClose:hover {
-  background-color: #9bbec8;
-  color: #16425b;
-  border-radius: 10vw;
-  cursor: pointer;
-  color: #16425b;
-}
-
-.flexInfo > img {
-  padding: 0px 50px 0 0;
-  height: 400px;
-}
-
-.mediaType {
-  text-transform: uppercase;
-}
-
-.vote {
-  height: 50px;
-  width: 50px;
-  border: 1px solid #fff;
-  border-radius: 10vw;
-  position: absolute;
-  text-align: center;
-  line-height: 50px;
-}
-
-.releaseDate {
-  float: right;
-  line-height: 50px;
-}
-
 /* Popular People Section */
+
+.popularPeopleHeader {
+  color: #16425b;
+  float: left;
+}
 
 .bgLeftPeopleSection {
   background-color: #9bbec8;
@@ -602,4 +568,12 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.likeMovie {
+  color: #fff;
+  font-size: 42px;
+  position: absolute;
+  top: 10px;
+  margin-left: 158px;
 }

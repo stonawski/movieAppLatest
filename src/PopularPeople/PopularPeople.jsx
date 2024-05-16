@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
+import "./popularPeople.css";
+
 const apiKey = "b4c8656d224730057cefeb55c48ee29b";
 
 function formatDate(dateString) {
